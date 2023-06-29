@@ -19,7 +19,7 @@ function calc(){
         let result2  = result.value;
         result.value = eval(result2)
     } else{
-        alert("Erro! Adicione valores válidos.")
+        alert("¡Erro! Digite valores válidos.")
     }
 }
 
