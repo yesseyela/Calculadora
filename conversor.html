@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con Conversor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="position-absolute top-0 start-50 translate-middle-x" id="nav1">
+        <h1 class="h3"> Calcular:</h1>
+        <nav class="navbar bg-body-tertiary">
+            <form class="container-fluid justify-content-start">
+            <a href="index.html">
+                <button class="btn btn-outline-success me-2" type="button">Calculadora</button>
+            </a>
+            <a href="conversor.html">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Convertidor</button>
+            </a>
+            </form>
+        </nav>
+    </div>
+    <div class="calc-converter d-none" id="nav-converter">
+        <br>
+        <div class="form-group" >
+            <select  class="form-select" id="converterOpt" onchange="setLabels()">
+                <option value="T" selected>Temperatura</option>
+                <option value="P">Presión</option>
+                <option value="M">Masa</option>
+                <option value="L">Longitud</option>
+            </select>
+        </div>
+        <div class="row my-3 d-flex justify-content-center">
+            <div class="col-5">
+                <input class="form-control" id="numberOne" onkeyup="convertOneTwo()">
+                <label id="labelOpOne">Celsius</label>
+            </div>
+            <div class="col-auto">
+                <span>
+                    =
+                </span>
+            </div>
+            <div class="col-5">
+                <input class="form-control" id="numberTwo" onkeyup="convertTwoOne()">
+                <label  id="labelOpTwo">Fahrenheit</label>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

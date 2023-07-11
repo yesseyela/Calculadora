@@ -25,14 +25,27 @@
 
 </head>
 <body>
-    
+    <div class="position-absolute top-0 start-50 translate-middle-x" id="nav1">
+        <h1 class="h3"> Calcular:</h1>
+        <nav class="navbar bg-body-tertiary">
+            <form class="container-fluid justify-content-start">
+            <a href="index.html">
+                <button class="btn btn-outline-success me-2" type="button">Calculadora</button>
+            </a>
+            <a href="conversor.html">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Convertidor</button>
+            </a>
+            </form>
+        </nav>
+    </div>
+    <br>
+    <br>
     <div class="calc container-fluid">
         <div class="row calc-content justify-content-center w-100 mx-auto">
             <div class="col-12 col-md-8 col-lg-6 col-xl-4 ">
-
+                <br>
                 <!-- Top of the Calculator -->
                 <div class="container calc-top">
-
                     <!-- 3 themes options -->
                     <div class="row justify-content-end">
                         <span class="col-1">1</span>
@@ -55,7 +68,7 @@
                     </div>
 
                     <!-- Input to put the results  -->
-                    <div class="calc-top-result row">
+                    <div class="calc-top-result row"> 
                         <input type="text" class="col-12" id="result" placeholder="0" disabled></input>
                     </div>
                 </div>
@@ -99,6 +112,7 @@
 
             </div>
         </div>
+        
     </div>
 
     <!-- Link Boostrap JS  -->
