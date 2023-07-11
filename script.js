@@ -34,6 +34,132 @@ function del(){
     result.value = result2.substring(0, result2.length - 1);
 }
 
+/* _________________*/
+function toggleNav() {
+    let calculator = document.getElementById("calc-keys");
+    let result = document.getElementById("calc-top-result");
+    let navConvert = document.getElementById("nav-converter");
+
+    let calculatorTab = document.getElementById("nav-calculator-tab");
+    let converterTab = document.getElementById("nav-converter-tab");
+
+    calculator.classList.toggle("d-none");
+    navConvert.classList.toggle("d-none");
+    result.classList.toggle("d-none");
+
+    calculatorTab.classList.toggle("active");
+    converterTab.classList.toggle("active");
+}
+
+function setLabels() {
+
+    let option = document.getElementById("converterOpt").value;
+
+    let labelOne = document.getElementById("labelOpOne");
+    let labelTwo = document.getElementById("labelOpTwo");
+
+
+    document.getElementById("numberOne").value = "";
+    document.getElementById("numberTwo").value = "";
+
+    switch (option) {
+        case 'T':
+            //celsius, fahrenheit
+            labelOne.innerHTML = "Celsius";
+            labelTwo.innerHTML = "Fahrenheit";
+            break;
+        case 'P':
+            //pascal, bar
+            labelOne.innerHTML = "Pascal";
+            labelTwo.innerHTML = "Bar";
+            break;
+        case 'M':
+            //kg, grams
+            labelOne.innerHTML = "Kilogramos";
+            labelTwo.innerHTML = "Gramos";
+            break;
+        case 'L':
+            //meter, centimeter
+            labelOne.innerHTML = "Metros";
+            labelTwo.innerHTML = "Centímetros";
+            break;
+        default:
+            alert("Error! Adicione valores válidos.")
+
+    }
+}
+
+
+function convertOneTwo() {
+    // Get the value of the input
+    let numberOne = document.getElementById("numberOne").value;
+    let numberTwo = document.getElementById("numberTwo");
+
+    console.log(numberOne, "numberOne")
+    // Get the value of the select
+    let option = document.getElementById("converterOpt").value;
+
+    if (isNaN(numberOne) || numberOne == "") {
+        numberTwo.value = "";
+        return;
+    }
+    switch (option) {
+        case 'T':
+            //celsius to fahrenheit
+            numberTwo.value = (numberOne * 9 / 5) + 32;
+            break;
+        case 'P':
+            //pascal to bar
+            numberTwo.value = numberOne / 100000;
+            break;
+        case 'M':
+            //kg to grams
+            numberTwo.value = numberOne * 1000;
+            break;
+        case 'L':
+            //meter to centimeter
+            numberTwo.value = numberOne * 100;
+            break;
+        default:
+            alert("Error! Adicione valores válidos.")
+    }
+}
+
+function convertTwoOne() {
+    let numberOne = document.getElementById("numberOne");
+    let numberTwo = document.getElementById("numberTwo").value;
+
+    let option = document.getElementById("converterOpt").value;
+
+    if (isNaN(numberTwo) || numberTwo == "") {
+        numberOne.value = "";
+        return;
+    }
+    switch (option) {
+        case 'T':
+            //Fahrenheit to celsius
+            numberOne.value = ((numberTwo - 32) * 5 / 9).toFixed(4);
+
+            break;
+        case 'P':
+            //bar to pascal
+            numberOne.value = numberTwo * 100000;
+            break;
+        case 'M':
+            //grams to kg
+            numberOne.value = numberTwo / 1000;
+            break;
+        case 'L':
+            //centimeter to meter
+            numberOne.value = numberTwo / 100;
+            break;
+        default:
+            alert("Error. Ingrese valores válidos.")
+    }
+
+}
+
+
 /*
     ====================================================
     =================== TOGGLE THEME ===================
